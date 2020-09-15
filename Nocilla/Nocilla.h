@@ -15,6 +15,7 @@ FOUNDATION_EXPORT double NocillaVersionNumber;
 FOUNDATION_EXPORT const unsigned char NocillaVersionString[];
 
 #import <Nocilla/LSHTTPBody.h>
+#import <Nocilla/LSHTTPRequest.h>
 #import <Nocilla/LSMatcheable.h>
 #import <Nocilla/LSMatcher.h>
 #import <Nocilla/LSNocilla.h>

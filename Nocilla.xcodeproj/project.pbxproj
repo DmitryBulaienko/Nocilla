@@ -29,7 +29,7 @@
 		5475C7661AC4254600EB9514 /* LSDataMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A3B481A101BBB0009482F /* LSDataMatcher.m */; };
 		5475C7671AC4254600EB9514 /* NSData+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A08A3B4B1A101DA20009482F /* NSData+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C7681AC4254600EB9514 /* NSData+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A3B4C1A101DA20009482F /* NSData+Matcheable.m */; };
-		5475C7691AC4254600EB9514 /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; };
+		5475C7691AC4254600EB9514 /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C76A1AC4254600EB9514 /* LSHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */; };
 		5475C76B1AC4254600EB9514 /* LSHTTPBody.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C76C1AC4254600EB9514 /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; };
@@ -132,7 +132,7 @@
 		C235AFC71D26E1D8009ED7FD /* NSData+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235AFC81D26E1D8009ED7FD /* LSNSURLSessionHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A04D23C7187E4BC900EF6CB2 /* LSNSURLSessionHook.h */; };
 		C235AFC91D26E1D8009ED7FD /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; };
-		C235AFCA1D26E1D8009ED7FD /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; };
+		C235AFCA1D26E1D8009ED7FD /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235AFCB1D26E1D8009ED7FD /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235AFCC1D26E1D8009ED7FD /* ASIHTTPRequestStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */; };
 		C235AFCD1D26E1D8009ED7FD /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -187,7 +187,7 @@
 		C235B0081D26E2EA009ED7FD /* NSData+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235B0091D26E2EA009ED7FD /* LSNSURLSessionHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A04D23C7187E4BC900EF6CB2 /* LSNSURLSessionHook.h */; };
 		C235B00A1D26E2EA009ED7FD /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; };
-		C235B00B1D26E2EA009ED7FD /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; };
+		C235B00B1D26E2EA009ED7FD /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235B00C1D26E2EA009ED7FD /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C235B00D1D26E2EA009ED7FD /* ASIHTTPRequestStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */; };
 		C235B00E1D26E2EA009ED7FD /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };

@@ -89,6 +89,9 @@ describe(@"#startLoading", ^{
                         
             protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client]; 
         });
+        afterEach(^{
+            [LSNocilla sharedInstance].unstubbedRequestHandler = nil;
+        });
         context(@"that matches an stubbed request", ^{
             context(@"and the response should succeed", ^{
                 beforeEach(^{
@@ -145,11 +148,29 @@ describe(@"#startLoading", ^{
             });
         });
         context(@"that doesn't match any stubbed request", ^{
-            it(@"should raise an exception with a meaningful message", ^{
+            it(@"should raise an exception with a meaningful message if `unstubbedRequestHandler` is not set", ^{
                 NSString *expectedMessage = @"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://api.example.com/dogs.xml\");\n";
                 [[theBlock(^{
                     [protocol startLoading];
                 }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
+            });
+            
+            it(@"should trigger `unstubbedRequestHandler` if set", ^{
+                XCTestExpectation *expectation = [[XCTestExpectation alloc] initWithDescription:@"unstubbed request handler expectation"];
+                
+                [LSNocilla sharedInstance].unstubbedRequestHandler = ^(id<LSHTTPRequest> request){
+                    [[request.url.absoluteString should] equal:stringUrl];
+                    [[request.method should] equal:@"GET"];
+                    [[request.headers should] beNil];
+                    [expectation fulfill];
+                };
+
+                [protocol startLoading];
+                
+                XCTWaiterResult result = [XCTWaiter waitForExpectations:@[expectation] timeout:1.0];
+                if (result != XCTWaiterResultCompleted) {
+                    fail([NSString stringWithFormat:@"failed to fulfill unstubbed request handler expectation - waiter result: %ld", result]);
+                }
             });
         });
     });
