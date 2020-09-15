@@ -3,6 +3,7 @@
 #import "NSURLRequest+LSHTTPRequest.h"
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
+#import "LSHTTPRequestDSLRepresentation.h"
 
 @implementation LSHTTPStubURLProtocol
 
@@ -27,7 +28,13 @@
     [cookieStorage setCookies:[NSHTTPCookie cookiesWithResponseHeaderFields:stubbedResponse.headers forURL:request.url]
                        forURL:request.URL mainDocumentURL:request.URL];
 
-    if (stubbedResponse.shouldFail) {
+    if (!stubbedResponse) {
+        NSString* msg = [NSString stringWithFormat:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request] description]];
+        NSError* error = [NSError errorWithDomain:@"NocillaUnexpectedRequest"
+                                             code:kCFURLErrorTimedOut
+                                         userInfo:@{@"error": msg}];
+        [client URLProtocol:self didFailWithError:error];
+    } else if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
         NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
